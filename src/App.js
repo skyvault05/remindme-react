@@ -1,30 +1,17 @@
 import logo from "./logo.svg";
 import "./App.css";
 import MyCalendar from "./calendar/calendar";
+import RecipeReviewCard from "./card/RecipeReviewCard";
+import ScheduleDetails from "./schedule/ScheduleDetails";
 
-function App() {
-  const list = [1, 2, 3, 4, 6, 7];
+const App = () => {
   return (
     <div>
-      <MyCalendar />
-      {list.map((a, index) => (
-        <span key={index}>{a.label}</span>
-      ))}
+      {/* <MyCalendar />
+      <RecipeReviewCard /> */}
+      <ScheduleDetails />
     </div>
   );
-
-  // const weekArr = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
-
-  // return (
-  //   <div>
-  //     {weekArr.map((week, index) => (
-  //       <span key={index}>
-  //         {week}
-  //         {" / "}
-  //       </span>
-  //     ))}
-  //   </div>
-  // );
-}
+};
 
 export default App;

@@ -8,13 +8,6 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import ScheduleRepository from "../repository/ScheduleRepository";
 import ScheduleMapper from "../mapper/ScheduleMapper";
 
-const myEventsList = [
-  { start: new Date(), end: new Date(), title: "special event" },
-  { start: new Date(), end: new Date(), title: "special event" },
-  { start: new Date(), end: new Date(), title: "special event" },
-  { start: new Date(), end: new Date(), title: "special event" },
-];
-
 const MyCalendar = () => {
   const scheduleMapper = new ScheduleMapper();
 
@@ -38,8 +31,6 @@ const MyCalendar = () => {
         .then((eventList) => setMyEventList(eventList));
     });
   }, []);
-
-  //   console.log(myEventList);
 
   return (
     <div className="MyCalendar">
