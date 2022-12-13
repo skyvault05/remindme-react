@@ -3,7 +3,13 @@ import axios from "axios";
 export default class ScheduleRepository {
   async getMySchedules() {
     const url = "/api/v1/schedule/getMySchedules";
-    let response = await axios.get(url);
+    let response = await axios
+      .get(url)
+      .then(function (response) {
+        console.log("response", response);
+      })
+      .catch((e) => console.error(e));
+    console.log(response);
     return response.data;
   }
   async getSchedule(scheduleId) {

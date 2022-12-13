@@ -1,7 +1,7 @@
 import moment from "moment";
 require("moment-recur");
 
-export default class SceduleMapper {
+export default class ScheduleMapper {
   async toCalendarSchedule(scheduleList) {
     let calendarSchedule = [];
     for (const index in scheduleList) {

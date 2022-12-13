@@ -1,14 +1,14 @@
 import "./App.css";
 
 import MyCalendar from "./calendar/Calendar";
-import RecipeReviewCard from "./card/RecipeReviewCard";
-import ScheduleDetails from "./schedule/ScheduleDetails";
+import Main from "./main/Main";
 
 const App = () => {
   return (
     <div>
       <MyCalendar />
-      <RecipeReviewCard />
+      {/* <ScheduleCard /> */}
+      <Main />
       <hr />
       {/* <ScheduleDetails /> */}
     </div>
