@@ -1,4 +1,4 @@
-import "@fullcalendar/react/dist/vdom";
+import '@fullcalendar/react/dist/vdom';
 
 import allLocales from "@fullcalendar/core/locales-all";
 import dayGridPlugin from "@fullcalendar/daygrid";
@@ -6,11 +6,11 @@ import interactionPlugin from "@fullcalendar/interaction";
 import FullCalendar, {
   DateSelectArg,
   EventApi,
-  EventClickArg,
+  EventClickArg
 } from "@fullcalendar/react";
 import { useCallback, useEffect, useState } from "react";
 import { createEventId, INITIAL_EVENTS } from "./event-utils";
-import ScheduleRepository from "./ScheduleRepository";
+import ScheduleRepository from './ScheduleRepository';
 
 function Schedule() {
   const [currentEvents, setCurrentEvents] = useState<EventApi[]>([]);
@@ -22,15 +22,10 @@ function Schedule() {
   useEffect(() => {
     const scheduleRepository = new ScheduleRepository();
     scheduleRepository.getMySchedules();
-  }, []);
-
+  },[])
+  
   const handleDateSelect = useCallback((selectInfo: DateSelectArg) => {
-    let title = prompt(
-      selectInfo.startStr +
-        " ~ " +
-        selectInfo.endStr +
-        " 이벤트 제목을 입력하세요."
-    )?.trim();
+    let title = prompt(selectInfo.startStr+" ~ "+selectInfo.endStr+" 이벤트 제목을 입력하세요.")?.trim();
     // console.log('selectInfo', selectInfo)
     let calendarApi = selectInfo.view.calendar;
     calendarApi.unselect();
@@ -40,15 +35,13 @@ function Schedule() {
         title,
         start: selectInfo.startStr,
         end: selectInfo.endStr,
-        allDay: selectInfo.allDay,
+        allDay: selectInfo.allDay
       });
     }
   }, []);
   const handleEventClick = useCallback((clickInfo: EventClickArg) => {
     if (
-      window.confirm(
-        `이 이벤트 '${clickInfo.event.title}' 를 삭제 하시겠습니까?`
-      )
+      window.confirm(`이 이벤트 '${clickInfo.event.title}' 를 삭제 하시겠습니까?`)
     ) {
       clickInfo.event.remove();
     }
